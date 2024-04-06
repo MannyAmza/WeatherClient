@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { Country } from './country';
 import { HttpClient } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-countries',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './countries.component.html',
-  styleUrl: './countries.component.css'
+  styleUrl: './countries.component.scss'
 })
 export class CountriesComponent {
   public countries: Country[] = [];
