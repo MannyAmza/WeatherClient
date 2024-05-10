@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment.development';
-import { Country } from './country';
 import { HttpClient } from '@angular/common/http';
+import { Country } from './country';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -11,19 +11,22 @@ import { RouterLink } from '@angular/router';
   templateUrl: './countries.component.html',
   styleUrl: './countries.component.scss'
 })
-export class CountriesComponent {
-  public countries: Country[] = [];
-  
-  constructor(private http: HttpClient) {}
+export class CountriesComponent implements OnInit {
+  public countries!: Country[];
+
+  constructor(private http: HttpClient) {  }
   ngOnInit(): void {
-    this.getCountries();
+    this.getData()
   }
-  getCountries() {
-    this.http.get<Country[]>(environment.baseURL + '/api/Countries').subscribe(
-      {
-        next: result => this.countries = result, 
-        error: error => console.error(error)
-      }
-    );
+
+  getData() {
+    var url = environment.baseURL + 'api/Countries';
+    this.http.get<Country[]>(url)
+    .subscribe({
+      next: result => this.countries = result,
+      error: e => console.error(e)
+    })
   }
+
+
 }

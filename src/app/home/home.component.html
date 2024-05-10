@@ -4,7 +4,8 @@
 
 @if (!forecasts) {
     <p><em>Loading...</em></p>
-}@else{
+}
+@else {
     <table>
         <thead>
             <tr>
@@ -15,14 +16,14 @@
             </tr>
         </thead>
         <tbody>
-            @for(forecast of forecasts; track $index){
-                <tr>
-                    <td>{{ forecast.date }}</td>
-                    <td>{{ forecast.temperatureC }}</td>
-                    <td>{{ forecast.temperatureF }}</td>
-                    <td>{{ forecast.summary }}</td>
-                </tr>
-            }
+            @for (forecast of forecasts; track $index) {
+            <tr>
+                <td>{{ forecast.date }}</td>
+                <td>{{ forecast.temperatureC }}</td>
+                <td>{{ forecast.temperatureF }}</td>
+                <td>{{ forecast.summary }}</td>
+            </tr>
+        }
         </tbody>
-    </table>
+    </table>    
 }
