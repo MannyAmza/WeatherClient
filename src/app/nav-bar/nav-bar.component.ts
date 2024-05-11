@@ -7,7 +7,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 
 @Component({
-  selector: 'app-nav-menu',
+  selector: 'app-nav-bar',
   standalone: true,
   imports: [
     MatIconModule,
@@ -18,7 +18,7 @@ import { AuthService } from '../auth/auth.service';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
-export class NavMenuComponent implements OnInit, OnDestroy {
+export class NavBarComponent implements OnInit, OnDestroy {
   private destroySubject = new Subject();
   isLoggedIn: boolean = false;
   

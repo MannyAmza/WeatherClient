@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from "./home/home.component";
-import { NavMenuComponent } from "./nav-bar/nav-bar.component";
+import { NavBarComponent } from "./nav-bar/nav-bar.component";
 import { AuthService } from './auth/auth.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { AuthService } from './auth/auth.service';
         CommonModule,
         RouterOutlet,
         HomeComponent,
-        NavMenuComponent
+        NavBarComponent
     ]
 })
 export class AppComponent implements OnInit {
